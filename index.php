@@ -280,25 +280,21 @@ var_dump($tableau2);
 // Ecrire un algo de tri à bulle 
 
 $tableau = [4, 10, 5, 1, 2, 8, 9, 3, 7, 6];
-$echanger = true;
 
-
-while ($echanger = false) {
-    for ($i=0; $i<count($tableau)-1 ; $i++) {
-        if ($tableau[$i] > $tableau[$i+1]) { 
-
+function bubbleSort($tableau) { 
+for($i=0; $i<9; $i++) { 
+    for ($j=0; $j>(9-$i); $j++) { 
+        if ($tableau[$j] > $tableau[$j++]) {
+            $temp = $tableau[$j++];
+            $tableau[$j++] = $tableau[$j];
+            $tableau[$j] = $temp;
         }
-    }
-} 
+    } 
+}
 
-var_dump($tableau); 
+return $tableau;
 
-
-
-
+}
 
 
 ?>
-
-
-
