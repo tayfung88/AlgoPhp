@@ -195,6 +195,20 @@ if ($N < 1 || $N > 26) {
 ???????????????????????????????????????????????????????? */
 
 
+// Ecrire un algo que retourne une lettre dans l'alphabet 
+
+$alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+$lSaisie = 'd';
+
+for ($i = 0; $i < count($alphabet)-1; $i++) { 
+    if (($alphabet[$i]) == $lSaisie) {
+        echo"la lettre saisie est à l'indice [$i] <br>"; 
+    } else {
+        echo "pas ici...<br>";
+    }
+}
+
+
 
 
 // Ecrire un algo qui vérifie l'égalité de deux tableaux fournis en paramètres (FOR)
@@ -305,6 +319,8 @@ for($i=0; $i<9; $i++) {
 // Algo tri à bulle 2 
 
 
+/*
+
 $tableau = [4, 10, 5, 1, 2, 8, 9, 3, 7, 6];
 
 $i = 0;
@@ -330,7 +346,7 @@ function bubbleSort($tableau) {
     return $tableau;
 }
 
-
+*/
 
 
 
