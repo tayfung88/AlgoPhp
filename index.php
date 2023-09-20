@@ -304,22 +304,39 @@ for($i=0; $i<9; $i++) {
 
 // Algo tri à bulle 2 
 
+
 $tableau = [4, 10, 5, 1, 2, 8, 9, 3, 7, 6];
 
-for ($i = count($tableau) -2; $i >= 0; $i--) {
-    for ($j = 0; $j <= $i; $tableau[$j]) { 
-        if ($tableau[$j] > $tableau[$j++]) {
-        $temp = $tableau[$j++];
-        $tableau[$j++] = $tableau[$j];
-        $tableau[$j] = $temp;
+$i = 0;
+$j = 0; 
+
+$temp = 0; 
+
+
+function bubbleSort($tableau) { 
+    $longueurT = count($tableau);
+    for ($i = 0; $i < $longueurT -1; $i++) {                // la boucle s'éxecutera tant que '$i' est inférieur à la longueur du tableau (chaque éléments du tableau) 
+
+        for ($j = 0; $j < $longueurT - $i -1; $j++) {       // boucle interne, signifie que la boucle s'éffectue pour chaque élément du tableau jusqu'à l'élement précédent du dernier élément trié 
+                                                            // à chaque itération de la boucle externe, le plus grand élément non trié remonte progressivement
+                                                            // vers la fin du tableau, "$longueurT - $i -1" limite la boucle interne à cette partie du tableau
+            if ($tableau[$j] > $tableau[$j++]) {
+                $temp = $tableau[$j];                       // $temp est une variable temporaire utilisée pour stocker temporairement la valeur d'un élement lors d'un échange
+                $tableau[$j] = $tableau[$j++];
+                $tableau[$j++] = $temp;
+            }
         }
     }
+    return $tableau;
 }
 
 
 
-/*  */
-// * Ecrire un algo de tri pivot 
+
+
+
+
+
 
 
 
