@@ -279,6 +279,8 @@ var_dump($tableau2);
 
 // Ecrire un algo de tri à bulle 
 
+/*
+
 $tableau = [4, 10, 5, 1, 2, 8, 9, 3, 7, 6];
 
 function bubbleSort($tableau) { 
@@ -292,9 +294,33 @@ for($i=0; $i<9; $i++) {
     } 
 }
 
-return $tableau;
-
 }
+
+*/
+
+
+
+
+
+// Algo tri à bulle 2 
+
+$tableau = [4, 10, 5, 1, 2, 8, 9, 3, 7, 6];
+
+for ($i = count($tableau) -2; $i >= 0; $i--) {
+    for ($j = 0; $j <= $i; $tableau[$j]) { 
+        if ($tableau[$j] > $tableau[$j++]) {
+        $temp = $tableau[$j++];
+        $tableau[$j++] = $tableau[$j];
+        $tableau[$j] = $temp;
+        }
+    }
+}
+
+
+
+/*  */
+// * Ecrire un algo de tri pivot 
+
 
 
 ?>
