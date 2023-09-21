@@ -69,7 +69,7 @@ while ($NbSaisi != $NbAtrouver) {
         echo ("trop petit");
         break;
     }
-        if ($NbSaisi < $NbAtrouver) { 
+        if ($NbSaisi > $NbAtrouver) { 
             echo("trop grand");
             break;
         }
@@ -127,7 +127,7 @@ for($i=0; $i<count($Monnaie)-1 ; $i++) {                                        
 /* ?????????????????????????????????????????????????????????????
 
 $Monnaie = [50, 20, 10];
-$NombreMonnaie[0] = [2, 10, 50];
+$NombreMonnaie = [2, 10, 50];
 $ARendre = 200; 
 
 for($i=0; $i<count($Monnaie)-1 ; $i++) {
@@ -197,6 +197,8 @@ if ($N < 1 || $N > 26) {
 
 // Ecrire un algo que retourne une lettre dans l'alphabet 
 
+/* 
+
 $alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 $lSaisie = 'd';
 
@@ -207,6 +209,8 @@ for ($i = 0; $i < count($alphabet)-1; $i++) {
         echo "pas ici...<br>";
     }
 }
+
+*/
 
 
 
@@ -316,6 +320,8 @@ for($i=0; $i<9; $i++) {
 
 
 
+
+
 // Algo tri à bulle 2 
 
 
@@ -330,21 +336,25 @@ $temp = 0;
 
 
 function bubbleSort($tableau) { 
-    $longueurT = count($tableau);
-    for ($i = 0; $i < $longueurT -1; $i++) {                // la boucle s'éxecutera tant que '$i' est inférieur à la longueur du tableau (chaque éléments du tableau) 
-
-        for ($j = 0; $j < $longueurT - $i -1; $j++) {       // boucle interne, signifie que la boucle s'éffectue pour chaque élément du tableau jusqu'à l'élement précédent du dernier élément trié 
-                                                            // à chaque itération de la boucle externe, le plus grand élément non trié remonte progressivement
-                                                            // vers la fin du tableau, "$longueurT - $i -1" limite la boucle interne à cette partie du tableau
-            if ($tableau[$j] > $tableau[$j++]) {
-                $temp = $tableau[$j];                       // $temp est une variable temporaire utilisée pour stocker temporairement la valeur d'un élement lors d'un échange
-                $tableau[$j] = $tableau[$j++];
-                $tableau[$j++] = $temp;
+    $longueurT = count($tableau)-1;
+    for ($i = 0; $i < $longueurT; $i++) {                           // la boucle s'éxecutera tant que '$i' est inférieur à la longueur du tableau (chaque éléments du tableau) 
+            for ($j = 0; $j < ($longueurT - $i); $j++) {            // boucle interne, signifie que la boucle s'éffectue pour chaque élément du tableau jusqu'à l'élement précédent du dernier élément trié 
+                                                                    // à chaque itération de la boucle externe, le plus grand élément non trié remonte progressivement
+                                                                    // vers la fin du tableau, "$longueurT - $i -1" limite la boucle interne à cette partie du tableau
+                if ($tableau[$j] > $tableau[$j+1]) {
+                    $temp = $tableau[$j+1];                         // $temp est une variable temporaire utilisée pour stocker temporairement la valeur d'un élement lors d'un échange
+                    $tableau[$j+1] = $tableau[$j];
+                    $tableau[$j] = $temp;
+                }
             }
-        }
-    }
-    return $tableau;
+    }   return $tableau;
 }
+
+$tableau = [4, 10, 5, 1, 2, 8, 9, 3, 7, 6];
+$tableauTrié = bubbleSort($tableau);
+
+print_r($tableau);
+var_dump($tableau);
 
 */
 
@@ -354,6 +364,120 @@ function bubbleSort($tableau) {
 
 
 
+// Algo qui retourne l'emplacement d'une lettre dans l'alphabet, lettre fournie par l'utilisateur.
+
+/* 
+
+$alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+$lSaisie = 'd';
+
+for ($i = 0; $i < count($alphabet)-1; $i++) { 
+    if (($alphabet[$i]) == $lSaisie) {
+        echo"la lettre saisie est à l'indice [$i] <br>"; 
+    }       
+}
+
+*/
+
+
+
+
+
+
+// Algo comparer deux mots 
+
+/*
+
+$mot1 = 'chat';
+$mot2 = 'chien';
+
+$resultat = strcmp($mot1, $mot2);
+
+if ($resultat < 0) {
+    echo "le mot $mot1 est plus petit que $mot2";
+} elseif ($resultat > 0) {
+    echo "le mot $mot2 est plus petit que $mot1";
+} else { 
+    "les mots sont identiques.";
+}
+
+*/
+
+
+
+
+
+// Algo comparer deux chaines de C 
+
+/*
+
+$chaineC1 = "$123abc@salut";
+$chaineC2 = "$123abc@salu";
+
+echo strcmp($chaineC1, $chaineC2);
+        // si chaineC1 < chaineC2 = <0
+        // si chaineC1 > chaineC2 = >0
+        // si chaineC1 = chaineC2 = =0
+
+*/
+
+
+
+
+// Algo comparer deux mots sans fonction php 
+
+
+
+
+// Algo Tri à Bulle 3 
+
+/*
+
+$tableau = [15, 5, 3, 2]; 
+
+for($i = 0 ; $i < count($tableau) ; $i++) {
+    for($j = 0 ; $j < count($tableau) -1; $j++) {
+        if($tableau[$j] > $tableau[$j+1]) {
+            $temp = $tableau[$j];
+            $tableau[$j] = $tableau[$j+1];
+            $tableau[$j+1] = $temp;
+        }   
+    }
+}
+
+print_r($tableau);
+
+*/
+
+
+
+
+// Algo Tri Rapide (Pivot)
+
+function triRapide($tableau) {
+    if(count($tableau) <= 1) { 
+        return $tableau;
+    }
+    else { 
+        $pivot = $tableau[0];
+        $gauche = array();
+        $droite = array();
+        for ($i = 1; $i < count($tableau); $i++) { 
+            if ($tableau[$i] < $pivot) {
+                $gauche[] = $tableau[$i];
+            }
+            else {
+                $droite[] = $tableau[$i];
+            }
+        }
+        return array_merge(triRapide($gauche), array($pivot), triRapide($droite));
+    }
+}
+
+$triRapideTest = [5, 3, 8, 10, 18, 2, 7];
+echo implode(".",$triRapideTest)." @triRapideTest<br>";
+$resultat = triRapide($triRapideTest);
+echo implode(",",$resultat)." @resultat<br>";
 
 
 ?>
