@@ -417,7 +417,7 @@ $chaineC2 = "$123abc@salu";
 echo strcmp($chaineC1, $chaineC2);
         // si chaineC1 < chaineC2 = <0
         // si chaineC1 > chaineC2 = >0
-        // si chaineC1 = chaineC2 = =0
+        // si chaineC1 = chaineC2 = 0
 
 */
 
