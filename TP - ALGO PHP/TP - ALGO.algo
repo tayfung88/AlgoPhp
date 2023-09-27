@@ -1,0 +1,66 @@
+
+// TP - ALGO 
+
+tableauAnnée <- Entier 
+tableauNote <- Entier 
+
+
+// Fonction pour convertir les scores en étoiles :
+
+fonction convertirScoresEnEtoiles(ratings)
+    scoresEnEtoiles = tableau vide
+
+    pour chaque score dans ratings
+        scoreEnPourcentage = convertir score en pourcentage à float en supprimant le "%" du score
+        scoreEnEtoiles = scoreEnPourcentage / 20.0
+        scoreArrondi = arrondir scoreEnEtoiles à une décimale
+        ajouter scoreArrondi à scoresEnEtoiles
+
+    retourner scoresEnEtoiles
+fin fonction
+
+
+// Conversion des scores en étoiles :
+
+scoresEnEtoiles = appeler la fonction convertirScoresEnEtoiles(ratings)
+
+
+// Tri du tableau des scores en étoiles (BubbleSort) :
+
+tableauEtoiles = scoresEnEtoiles
+
+pour i allant de 0 à taille de tableauEtoiles - 1
+    pour j allant de 0 à taille de tableauEtoiles - 2
+        si tableauEtoiles[j] > tableauEtoiles[j + 1] alors
+            echanger (tableauEtoiles[j] , tableauEtoiles[j+1])
+        fin si
+    fin pour
+fin pour
+afficher tableauEtoiles
+
+
+// Tri du tableau des années : 
+
+fonction trierAnnee(tableauAnnee)
+    pour i allant de 0 à taille de annees - 1
+        pour j allant de 0 à taille de annees - 2
+            si annees[j] > annees[j + 1] alors
+                echanger 
+            fin si
+        fin pour
+fin pour
+afficher trierAnnee
+
+
+
+// Afficher le score en étoiles et les années de sortie des films ensemble dans le bonne ordre 
+
+tant que i < taille de scoresEnEtoiles
+    afficher "Score en étoiles : " + scoresEnEtoiles[i]
+    incrémenter i
+fin tant que
+
+tant que j < taille de resultatTriAnnees
+    afficher "Année : " + resultatTriAnnees[j]
+    incrémenter j
+fin tant que
